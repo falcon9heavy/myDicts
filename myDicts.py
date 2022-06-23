@@ -18,7 +18,7 @@ print(D['bill'])
 for keys in D:
     print (f'Values are {D.values()} ')
 
-D = {'spam' : 2, 'ham' : 1, 'eggs' : 3}
+D = {'spam' : 2, 'ham' : 1, 'green_eggs' : 3}
 print(D)
 
 print(D['eggs'], 

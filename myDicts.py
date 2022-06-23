@@ -1,30 +1,87 @@
 """
 Dictionaries.....:
 
+This is an accumulation of examples using dictionaries
+with the intent of educating python users
+
 Key things to keep in mind first...
 
 --> lists are ordered, dictionaries are not, they are arbitrary, tracked by keys, not indexes.
+    no longer the case...
 --> Assessed by KEYS, not offset postion or index
 --> Heterogenous, variable length
---> Mutable mappings - as in no underlying order system, only mapped to data you create in keys
 
-lists support access by index, like arrays
-Dictionary support access by keys - or hash tables
+Python Collections (Arrays)
+
+There are four collection data types in the Python programming language:
+
+    List is a collection which is ordered and changeable. Allows duplicate members.
+    Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+    Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
+    Dictionary is a collection which is ordered (3.7) and changeable. No duplicate members.
+
+Also
+
+    Anything which can be stored in a Python variable can be stored in a dictionary value.
+    That includes mutable types including list and even dict — meaning you can nest dictionaries
+    inside on another. In contrast keys must be hashable and immutable — the object hash must
+    not change once calculated. This means list or dict objects cannot be used
+    for dictionary keys, however a tuple is fine.
+
+*Set items are unchangeable, but you can remove and/or add items whenever you like.
+**As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered.
 
 """
-D = {'sue': ['qwerty','yuiop'], 'bill': 12, 'snooka': [1,2,3], 'mD' : { 1: 'jane', 2: 'terry'}}
-print(D['bill'])
 
-for keys in D:
-    print (f'Values are {D.values()} ')
+# in a literal definition, you have a bit more ability to define keys... see where num 4 works
+# is accepted as a key in the literal
+
+D = {
+    'sue': ['qwerty','yuiop'],
+    4 : 'sally',
+     'bill': 12,
+    'snuka': [1,2,3],
+    tuple(['list','of','strings']):{ 1: 'jane', 2: 'terry'} # lists not hashable, tuples are, so...
+    }
+print(D)
+
+# yet when working with constructor dict(), it don't
+#D.update(5='mary')
+
+#but you can single out a key in literal form to update or add
+D[4]='barry'
+
+E = dict(sue = ['qwerty','yuiop'])
+E.update(sue='sally')
+print(E)
+
+print(f' I will always try to be {"snuka" in D} ') # in can find keys
+print(f' Then again sometimes I\'ll be {12 in D})' ) # but not values
+
+T = ('a','b','c')
+print(T, type(T))
+tuple1 = ("apple", "banana", "cherry")
+tuple2 = (1, 5, 7)
+F = dict.fromkeys(tuple1,tuple2)
+print(F)
+
+#oh, I actually wanted to 'zip' those two tuples into a dictionary, item per item
+F = dict(zip(tuple1,tuple2))
+print(F)
+
+
+tuple3 = (True, False, False)
+
+tuplex = ("abc", 34, True, 40, "male", {'key1':'valueX'})
+print(f' this is proof that {tuplex} is a tuple type({type(tuplex)}')
+
 
 D = {'spam' : 2, 'ham' : 1, 'eggs' : 3}
-print(D)
 
 print(D['eggs'], 
     len(D),          # how many pair?
     'ham' in D,      # is ham one of the keys
-    1 in D,          # is 1 a key? and no it won't tell you if its a value
+    1 in D,          # is 1 a key? and no it won't tell you if it's a value
     list(D.keys()),  # stick the keys in a list
     list(D.values()) # stick the values in a list
     )

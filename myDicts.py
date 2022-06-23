@@ -43,7 +43,7 @@ D = {
     'snuka': [1,2,3],
     tuple(['list','of','strings']):{ 1: 'jane', 2: 'terry'} # lists not hashable, tuples are, so...
     }
-print(D)
+print(D,"this is a print")
 
 # yet when working with constructor dict(), it don't
 #D.update(5='mary')

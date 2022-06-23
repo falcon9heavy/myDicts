@@ -11,15 +11,21 @@ Key things to keep in mind first...
 lists support access by index, like arrays
 Dictionary support access by keys - or hash tables
 
-"""
-D = {'sue': ['qwerty','yuiop'], 'bill': 12, 'snooka': [1,2,3], 'mD' : { 1: 'jane', 2: 'terry'}}
-print(D['bill'])
+Some stuff to work through
+https://www.mfitzp.com/python-dictionaries/
 
-for keys in D:
-    print (f'Values are {D.values()} ')
+
+"""
+D = {
+    'sue': ['qwerty','yuiop'],
+     'bill': 12,
+    'snuka': [1,2,3],
+    tuple(['list','of','strings']) : { 1: 'jane', 2: 'terry'}
+    }
+
+print(f' I will always try to be {"snuka" in D} ')
 
 D = {'spam' : 2, 'ham' : 1, 'eggs' : 3}
-print(D)
 
 print(D['eggs'], 
     len(D),          # how many pair?

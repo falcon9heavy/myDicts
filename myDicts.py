@@ -11,43 +11,15 @@ Key things to keep in mind first...
 lists support access by index, like arrays
 Dictionary support access by keys - or hash tables
 
-Some stuff to work through
-https://www.mfitzp.com/python-dictionaries/
-
-Python Collections (Arrays)
-
-There are four collection data types in the Python programming language:
-
-    List is a collection which is ordered and changeable. Allows duplicate members.
-    Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
-    Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
-    Dictionary is a collection which is ordered** and changeable. No duplicate members.
-
-
-*Set items are unchangeable, but you can remove and/or add items whenever you like.
-**As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered.
-
-
 """
-D = {
-    'sue': ['qwerty','yuiop'],
-     'bill': 12,
-    'snuka': [1,2,3],
-    tuple(['list','of','strings']):{ 1: 'jane', 2: 'terry'}
-    }
-print(f' I will always try to be {"snuka" in D} ')
+D = {'sue': ['qwerty','yuiop'], 'bill': 12, 'snooka': [1,2,3], 'mD' : { 1: 'jane', 2: 'terry'}}
+print(D['bill'])
 
-T = ('a','b','c')
-print(T[1])
-tuple1 = ("apple", "banana", "cherry")
-tuple2 = (1, 5, 7, 9, 3)
-tuple3 = (True, False, False)
-
-tuplex = ("abc", 34, True, 40, "male", {'key1':'valueX'})
-print(f' this is proof that {tuplex} is a tuple type({type(tuplex)}')
-
+for keys in D:
+    print (f'Values are {D.values()} ')
 
 D = {'spam' : 2, 'ham' : 1, 'eggs' : 3}
+print(D)
 
 print(D['eggs'], 
     len(D),          # how many pair?
